@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- =====================================================
+       GOTHIC DARKNESS — Tema gótico anos 2000
+       ===================================================== -->
+  <title>Gothic Darkness :: Bem-vindo às Trevas</title>
+
+  <!-- Ícone da aba (emoji como favicon simples) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩸</text></svg>" />
+
+  <!-- Folha de estilos principal -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- =====================================================
+       MÚSICA DE FUNDO
+       Troque "music.mp3" pelo caminho do seu arquivo .mp3
+       ===================================================== -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg" />
+    <!-- Fallback caso o formato não seja suportado -->
+    Seu navegador não suporta áudio HTML5.
+  </audio>
+
+  <!-- =====================================================
+       WRAPPER CENTRAL
+       ===================================================== -->
+  <div class="wrapper">
+
+    <!-- ==================================================
+         HEADER — Nome do site e navegação
+         ================================================== -->
+    <header class="site-header">
+
+      <!-- Título com efeito glitch (data-text deve ser igual ao conteúdo) -->
+      <h1
+        class="site-title"
+        data-text="Gothic Darkness"
+      >Gothic Darkness</h1>
+
+      <!-- Subtítulo / slogan -->
+      <p class="site-subtitle">
+        ☩ &nbsp; onde a luz vai morrer &nbsp; ☩
+      </p>
+
+      <!-- Divisor ornamentado -->
+      <div class="header-divider">✦ ✦ ✦</div>
+
+      <!-- Navegação principal -->
+      <nav class="site-nav" aria-label="Navegação principal">
+        <a href="#inicio">Início</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#galeria">Galeria</a>
+        <a href="#musica">Música</a>
+        <a href="#contato">Contato</a>
+      </nav>
+
+    </header>
+    <!-- /HEADER -->
+
+
+    <!-- ==================================================
+         LAYOUT PRINCIPAL — Coluna principal + Sidebar
+         ================================================== -->
+    <div class="main-layout" id="inicio">
+
+      <!-- ===============================================
+           COLUNA PRINCIPAL — Posts / Conteúdo
+           =============================================== -->
+      <main class="main-column">
+
+        <!-- ---- POST 1 ---- -->
+        <article class="panel post" id="post-1">
+
+          <header class="post-header">
+            <h2 class="post-title">A Escuridão Nos Chama</h2>
+            <time class="post-date" datetime="2025-10-31">31 de Outubro, 2025</time>
+          </header>
+
+          <div class="post-separator"></div>
+
+          <!-- Imagem do post — troque o src pelo caminho da sua imagem -->
+          <img
+            class="post-image"
+            src="img/post1.jpg"
+            alt="Uma floresta escura envolta em névoa"
+            loading="lazy"
+          />
+
+          <div class="post-body">
+            <p>
+              Este é o lugar onde as almas perdidas encontram refúgio.
+              Entre neblinas e memórias esquecidas, este espaço existe
+              para aqueles que entendem que a beleza mora nas sombras.
+            </p>
+            <p>
+              <!-- Edite livremente o texto abaixo -->
+              Aqui você encontrará poesia, arte sombria, músicas que
+              ecoam nas madrugadas e pensamentos que o dia prefere
+              não reconhecer. Bem-vindo ao lado esquecido da lua.
+            </p>
+          </div>
+
+          <!-- Tags do post -->
+          <div>
+            <span class="tag">sombras</span>
+            <span class="tag">poesia</span>
+            <span class="tag">trevas</span>
+          </div>
+
+          <a class="read-more" href="#">▶ continuar lendo</a>
+
+        </article>
+        <!-- /POST 1 -->
+
+
+        <!-- ---- POST 2 — Galeria ---- -->
+        <article class="panel post" id="galeria">
+
+          <header class="post-header">
+            <h2 class="post-title">Galeria das Sombras</h2>
+            <time class="post-date" datetime="2025-10-28">28 de Outubro, 2025</time>
+          </header>
+
+          <div class="post-separator"></div>
+
+          <!-- Imagem principal da galeria — troque o src -->
+          <img
+            class="post-image"
+            src="img/galeria1.jpg"
+            alt="Arte sombria gótica"
+            loading="lazy"
+          />
+
+          <div class="post-body">
+            <p>
+              Imagens capturadas entre o crepúsculo e a meia-noite.
+              Cada fotografia é uma janela para um mundo que a luz
+              prefere não iluminar.
+            </p>
+          </div>
+
+          <!-- Segunda imagem — troque o src -->
+          <img
+            class="post-image"
+            src="img/galeria2.jpg"
+            alt="Paisagem noturna"
+            loading="lazy"
+          />
+
+          <a class="read-more" href="#">▶ ver galeria completa</a>
+
+        </article>
+        <!-- /POST 2 -->
+
+
+        <!-- ---- POST 3 — Texto livre ---- -->
+        <article class="panel post" id="sobre">
+
+          <header class="post-header">
+            <h2 class="post-title">Sussurros da Meia-Noite</h2>
+            <time class="post-date" datetime="2025-10-20">20 de Outubro, 2025</time>
+          </header>
+
+          <div class="post-separator"></div>
+
+          <div class="post-body">
+            <!-- Edite o conteúdo abaixo livremente -->
+            <p>
+              Escreva aqui o que quiser. Este é o seu espaço,
+              a sua página, o seu pedaço da escuridão digital.
+              Pensamentos às 3 da manhã, poesias, fragmentos de
+              um diário secreto — tudo cabe aqui.
+            </p>
+            <p>
+              "Não sou triste; apenas sei enxergar a beleza onde
+              os outros fecham os olhos."
+            </p>
+            <p>
+              Adicione quantos posts quiser duplicando os blocos
+              <code>&lt;article class="panel post"&gt;</code> acima.
+            </p>
+          </div>
+
+          <span class="tag">pensamentos</span>
+          <span class="tag">diário</span>
+          <a class="read-more" href="#">▶ continuar</a>
+
+        </article>
+        <!-- /POST 3 -->
+
+      </main>
+      <!-- /COLUNA PRINCIPAL -->
+
+
+      <!-- ===============================================
+           SIDEBAR — Widgets laterais
+           =============================================== -->
+      <aside class="sidebar">
+
+        <!-- ---- WIDGET: PLAYER DE ÁUDIO ---- -->
+        <section class="panel audio-panel" id="musica">
+          <h3 class="panel-title">♪ Trilha Sonora</h3>
+
+          <!-- Ícone animado -->
+          <span class="audio-icon" aria-hidden="true">✦</span>
+          <span class="audio-label">tocando agora</span>
+
+          <!--
+            Player de áudio nativo.
+            O arquivo music.mp3 deve estar na mesma pasta do HTML.
+            Troque "music.mp3" pelo nome/caminho do seu arquivo.
+          -->
+          <audio
+            id="sidebar-player"
+            controls
+            loop
+          >
+            <source src="music.mp3" type="audio/mpeg" />
+            Áudio não suportado.
+          </audio>
+
+          <!-- Tracklist decorativa — edite as músicas -->
+          <ul class="tracklist" style="margin-top: 14px;">
+            <li>Within Temptation — Pale</li>
+            <li>Evanescence — My Immortal</li>
+            <li>HIM — Wicked Game</li>
+            <li>Nightwish — Sleeping Sun</li>
+            <li>Lacuna Coil — Heaven's a Lie</li>
+          </ul>
+        </section>
+        <!-- /PLAYER -->
+
+
+        <!-- ---- WIDGET: PERFIL / SOBRE ---- -->
+        <section class="panel" id="perfil">
+          <h3 class="panel-title">☽ Sobre Mim</h3>
+
+          <!--
+            Foto de perfil — troque "img/perfil.jpg" pela sua foto.
+            Dica: foto em tons escuros ou preto e branco fica melhor.
+          -->
+          <img
+            class="profile-pic"
+            src="img/perfil.jpg"
+            alt="Foto de perfil"
+          />
+
+          <p class="about-text">
+            <!-- Edite seu texto de apresentação abaixo -->
+            Criatura da meia-noite. Apaixonada por música sombria,
+            livros esquecidos e céus nublados. Este blog existe
+            porque o silêncio às vezes precisa de palavras.
+          </p>
+        </section>
+        <!-- /PERFIL -->
+
+
+        <!-- ---- WIDGET: CONTATO ---- -->
+        <section class="panel" id="contato">
+          <h3 class="panel-title">☎ Contato</h3>
+
+          <ul class="contact-list">
+
+            <!-- E-mail — edite o href e o texto -->
+            <li>
+              <span class="contact-icon" aria-hidden="true">✉</span>
+              <a href="mailto:seuemail@dominio.com">
+                seuemail@dominio.com
+              </a>
+            </li>
+
+            <!-- Instagram — edite o link e o @usuário -->
+            <li>
+              <span class="contact-icon" aria-hidden="true">📸</span>
+              <a
+                href="https://instagram.com/seuusuario"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                @seuusuario
+              </a>
+            </li>
+
+            <!-- Discord — edite o link de convite ou usuário -->
+            <li>
+              <span class="contact-icon" aria-hidden="true">🎮</span>
+              <a
+                href="https://discord.gg/seuservidor"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                discord.gg/seuservidor
+              </a>
+            </li>
+
+            <!-- Adicione mais contatos duplicando os <li> acima -->
+
+          </ul>
+        </section>
+        <!-- /CONTATO -->
+
+
+        <!-- ---- WIDGET: CITAÇÃO FAVORITA ---- -->
+        <section class="panel quote-panel">
+          <h3 class="panel-title">❝ Citação</h3>
+
+          <!-- Edite a citação e o autor -->
+          <blockquote>
+            "Não há maior escuridão do que aquela que vive
+            dentro de nós, esperando para ser transformada
+            em arte."
+            <cite>— Autoria desconhecida</cite>
+          </blockquote>
+        </section>
+        <!-- /CITAÇÃO -->
+
+      </aside>
+      <!-- /SIDEBAR -->
+
+    </div>
+    <!-- /MAIN LAYOUT -->
+
+
+    <!-- ==================================================
+         FOOTER
+         ================================================== -->
+    <footer class="site-footer">
+
+      <div class="footer-divider">☩ ✦ ☩</div>
+
+      <p class="footer-text">
+        <!-- Edite as informações do rodapé -->
+        Gothic Darkness &copy; 2025 &nbsp;·&nbsp;
+        Feito com escuridão e muita cafeína &nbsp;·&nbsp;
+        <a href="#inicio">↑ Voltar ao topo</a>
+      </p>
+
+      <p class="footer-text" style="margin-top: 6px; color: #333;">
+        Melhor visualizado às 3 da manhã, sozinho e com fones de ouvido.
+      </p>
+
+      <span class="footer-symbol" aria-hidden="true">☽ ✦ ☾</span>
+
+    </footer>
+    <!-- /FOOTER -->
+
+  </div>
+  <!-- /WRAPPER -->
+
+
+  <!-- =====================================================
+       SCRIPT — Autoplay de áudio com fallback
+       Navegadores modernos bloqueiam autoplay sem interação.
+       Este script tenta iniciar e avisa o usuário se falhar.
+       ===================================================== -->
+  <script>
+    (function () {
+      // Referência ao player da sidebar
+      var player = document.getElementById('sidebar-player');
+
+      // Tentativa de autoplay ao carregar a página
+      if (player) {
+        var playPromise = player.play();
+
+        if (playPromise !== undefined) {
+          playPromise.catch(function () {
+            // Autoplay bloqueado — aguarda primeira interação do usuário
+            document.addEventListener('click', function startOnClick() {
+              player.play();
+              document.removeEventListener('click', startOnClick);
+            }, { once: true });
+          });
+        }
+      }
+    })();
+  </script>
+
+</body>
+</html>
