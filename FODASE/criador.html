@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRIADOR DE HTMLS</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+
+    <form id="form">
+  <label for="title"><h1>Titulo</h1></label>
+  <input type="text" id="title">
+
+
+  <label for="post1"><h1>Post 1</h1></label>
+  <input type="text" id="post1">
+
+  <label for="post2"><h1>Post 2</h1></label>
+  <input type="text" id="post2">
+
+
+  <label for="img1"><h1>Imagem</h1></label>
+  <input type="text" id="img1">
+
+  <label for="musica">Musga</label>
+  <input type="text" id="musica">
+
+  <label for="data">Data</label>
+  <input type="date" id="data">
+<div class="cores"> 
+  <label for="tag1"><h1>tag 1</h1></label>
+  <input type="text" id="tag1">
+  <label for="tag2"><h1>tag 2</h1></label>
+  <input type="text" id="tag2">
+  <label for="tag3"><h1>tag 3 </h1></label>
+  <input type="text" id="tag3">
+  <label for="tag4"><h1>tag 4</h1></label>
+  <input type="text" id="tag4">
+</div>
+<button type="submit">Criar HTML</button>
+ </form>
+ <script>
+document.getElementById("form").addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const data = {
+        title: document.getElementById("title").value,
+        post1: document.getElementById("post1").value,
+        post2: document.getElementById("post2").value,
+        img1: document.getElementById("img1").value,
+        musica: document.getElementById("musica").value,
+        tag1: document.getElementById("tag1").value,
+        tag2: document.getElementById("tag2").value,
+        tag3: document.getElementById("tag3").value,
+        tag4: document.getElementById("tag4").value,
+        data: document.getElementById("data").value
+    };
+
+    const res = await fetch("http://localhost:3000/criar-html", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    });
+
+    const result = await res.json();
+    alert(result.mensagem + " -> " + result.arquivo);
+});
+</script>
+</body>
+</html>

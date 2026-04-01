@@ -1,0 +1,10 @@
+.cores{
+    display: grid;  
+    grid-template-columns: auto auto auto auto;
+
+}
+input{
+    width: 500px;
+    text-align: center;
+
+}
