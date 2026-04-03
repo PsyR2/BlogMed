@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>Psy Group</title>
+
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🩸</text></svg>" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Música -->
+  <audio id="bg-music" loop preload="auto">
+    <source src="music.mp3" type="audio/mpeg" />
+  </audio>
+
+  <div class="wrapper">
+
+    <!-- HEADER -->
+    <header class="site-header">
+      <h1 class="site-title" data-text="Gothic Darkness">Psy Jornal</h1>
+
+      <p class="site-subtitle">☩ onde a luz vira conhecimento ☩</p>
+
+      <div class="header-divider">✦ ✦ ✦</div>
+
+      <nav class="site-nav">
+        <a href="#">Em Breve!</a>
+        <a href="#inicio">Início</a>
+        <a href="#">Em Breve!</a>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <div class="main-layout" id="inicio">
+
+      <!-- POSTS DINÂMICOS -->
+      <main class="main-column" id="posts-container"></main>
+
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+
+        <section class="panel audio-panel">
+          <h3 class="panel-title">♪ Trilha Sonora</h3>
+
+          <audio id="sidebar-player" controls loop>
+            <source src="music.mp3" type="audio/mpeg" />
+          </audio>
+
+          <ul class="tracklist">
+            <li>Within Temptation — Pale</li>
+            <li>Evanescence — My Immortal</li>
+            <li>HIM — Wicked Game</li>
+            <li>Nightwish — Sleeping Sun</li>
+            <li>Lacuna Coil — Heaven's a Lie</li>
+          </ul>
+        </section>
+
+        <section class="panel">
+          <h3 class="panel-title">☽ Sobre Mim</h3>
+          <img class="profile-pic" src="img/perfil.jpg"/>
+          <p class="about-text">
+            Criatura da meia-noite. Apaixonada por música sombria,
+            livros esquecidos e céus nublados.
+          </p>
+        </section>
+
+        <section class="panel">
+          <h3 class="panel-title">☎ Contato</h3>
+          <ul class="contact-list">
+            <li>
+              ✉ <a href="mailto:rodrigo24102019@outlook.com">Email</a>
+            </li>
+            <li>
+              📸 <a href="https://instagram.com/rodrigo.2k20" target="_blank">@rodrigo.2k20</a>
+            </li>
+          </ul>
+        </section>
+
+        <section class="panel quote-panel">
+          <h3 class="panel-title">❝ Citação</h3>
+          <blockquote>
+            "Não há maior escuridão do que aquela que vive dentro de nós."
+          </blockquote>
+        </section>
+
+      </aside>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="site-footer">
+      <div class="footer-divider">☩ ✦ ☩</div>
+      <p>Gothic Darkness © 2025</p>
+    </footer>
+
+  </div>
+
+  <!-- SCRIPT POSTS.JSON -->
+  <script>
+    fetch("posts.json")
+      .then(res => res.json())
+      .then(posts => {
+        const container = document.getElementById("posts-container");
+
+        posts.reverse().forEach(post => {
+          const article = document.createElement("article");
+          article.className = "panel post";
+
+          article.innerHTML = `
+            <header class="post-header">
+              <h2 class="post-title">${post.titulo}</h2>
+              <time class="post-date">${post.data}</time>
+            </header>
+
+            <div class="post-separator"></div>
+
+            <img class="post-image" src="${post.imagem}" loading="lazy"/>
+
+            <div class="post-body">
+              <a href="${post.link}">Entrar</a>
+            </div>
+
+            <div>
+              ${post.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+            </div>
+          `;
+
+          container.appendChild(article);
+        });
+      })
+      .catch(err => {
+        document.getElementById("posts-container").innerHTML =
+          "<p style='color:red'>Erro ao carregar posts</p>";
+        console.error(err);
+      });
+  </script>
+
+  <!-- AUTOPLAY -->
+  <script>
+    (function () {
+      var player = document.getElementById('sidebar-player');
+      if (player) {
+        var playPromise = player.play();
+        if (playPromise !== undefined) {
+          playPromise.catch(() => {
+            document.addEventListener('click', function start() {
+              player.play();
+            }, { once: true });
+          });
+        }
+      }
+    })();
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "titulo": "A Escuridão Nos Chama",
+    "data": "2025-10-31",
+    "imagem": "img/post1.jpg",
+    "link": "posts/post1.html",
+    "tags": ["sombras", "poesia", "trevas"]
+  },
+  {
+    "id": 2,
+    "titulo": "Sussurros da Noite",
+    "data": "2025-11-02",
+    "imagem": "img/post2.jpg",
+    "link": "posts/post2.html",
+    "tags": ["noite", "mistério"]
+  }
+]
